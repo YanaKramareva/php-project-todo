@@ -14,7 +14,7 @@ class TaskStatusSeeder extends Seeder
      */
     public function run()
     {
-        $statuses = ['новый', 'в работе', 'на тестировании', 'завершен'];
+        $statuses = ['done', 'not done'];
 
         foreach ($statuses as $status) {
             $newStatus = new TaskStatus();

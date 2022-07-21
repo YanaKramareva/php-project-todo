@@ -22,7 +22,6 @@ class TaskFactory extends Factory
         $status = TaskStatus::inRandomOrder()->first();
         $label = Label::inRandomOrder()->first();
         $user = User::inRandomOrder()->first();
-        $executor = User::inRandomOrder()->first();
 
         return [
             'name' => $this->faker->name(),
@@ -30,7 +29,6 @@ class TaskFactory extends Factory
             'status_id' => $status->id,
             'label_id' => $label->id,
             'created_by_id' => $user->id,
-            'assigned_to_id' => $executor->id
         ];
     }
 }

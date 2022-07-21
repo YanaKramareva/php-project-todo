@@ -17,8 +17,7 @@ class LabelFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
-            'description' => Str::random(10)
+            'name' => 'urgent'
         ];
     }
 }

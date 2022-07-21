@@ -7,6 +7,7 @@ use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
@@ -41,7 +42,6 @@ class TaskController extends Controller
                 AllowedFilter::exact('status_id'),
                     AllowedFilter::exact('label_id'),
                     AllowedFilter::exact('created_by_id'),
-                AllowedFilter::exact('assigned_to_id')
                 ]
             )
             ->orderBy('id', 'asc')
@@ -62,16 +62,14 @@ class TaskController extends Controller
         $task = new Task();
         $taskStatuses = TaskStatus::pluck('name', 'id')->all();
         $taskLabels = Label::pluck('name', 'id')->all();
-        $executors = User::pluck('name', 'id')->all();
-
-        return view('tasks.create', compact('task', 'taskStatuses', 'taskLabels', 'executors'));
+        return view('tasks.create', compact('task', 'taskStatuses', 'taskLabels'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
     public function store(Request $request)
     {
@@ -80,8 +78,7 @@ class TaskController extends Controller
             'name' => 'required|max:255|unique:tasks',
             'status_id' => 'required',
             'description' => 'nullable|string',
-            'assigned_to_id' => 'nullable|integer',
-            'label_id' => 'required',
+            'label_id' => 'required'
             ],
             $messages = [
             'unique' => __('validation.The task name has already been taken'),
@@ -120,7 +117,7 @@ class TaskController extends Controller
         $taskLabels = Label::pluck('name', 'id')->all();
         $executors = User::pluck('name', 'id')->all();
 
-        return view('tasks.edit', compact('task', 'taskStatuses', 'executors', 'taskLabels'));
+        return view('tasks.edit', compact('task', 'taskStatuses', 'taskLabels'));
     }
 
     /**
@@ -128,7 +125,7 @@ class TaskController extends Controller
      *
      * @param  \Illuminate\Http\Request $request
      * @param Task $task
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
     public function update(Request $request, Task $task)
     {
@@ -138,14 +135,12 @@ class TaskController extends Controller
             'name' => 'required|max:255|unique:tasks,name,' . $task->id,
             'description' => 'nullable|string',
             'status_id' => 'required',
-            'assigned_to_id' => 'nullable|integer',
             'label_id' => 'required'
             ],
             $messages = [
             'unique' => __('validation.The task name has already been taken'),
             'max' => __('validation.The name should be no more than :max characters'),
                 'label_id' => __('validation.The name should be no more than :max characters')
-
             ]
         );
 
@@ -159,7 +154,7 @@ class TaskController extends Controller
      * Remove the specified resource from storage.
      *
      * @param Task $task
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
     public function destroy(Task $task)
     {

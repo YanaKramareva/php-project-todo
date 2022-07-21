@@ -62,7 +62,7 @@ class LabelControllerTest extends TestCase
     {
         $labelInputData = Label::factory()
             ->make()
-            ->only(['name', 'description']);
+            ->only(['name']);
 
         $response = $this->actingAs($this->user)
             ->post(route('labels.store', $labelInputData));

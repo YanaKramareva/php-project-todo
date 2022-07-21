@@ -14,16 +14,11 @@ class Task extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description', 'status_id', 'label_id', 'created_by_id', 'assigned_to_id'];
+    protected $fillable = ['name', 'description', 'status_id', 'label_id', 'created_by_id'];
 
     public function creator(): BelongsTo
     {
         return $this->belongsTo(User::class, 'created_by_id');
-    }
-
-    public function executor(): BelongsTo
-    {
-        return $this->belongsTo(User::class, 'assigned_to_id');
     }
 
     public function status(): BelongsTo
