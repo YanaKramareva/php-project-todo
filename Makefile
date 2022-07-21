@@ -10,7 +10,7 @@ setup:
 	php artisan db:seed
 	npm ci
 
-watch:
+start-frontend:
 	npm run watch
 
 migrate:
@@ -42,3 +42,6 @@ install:
 
 validate:
 	composer validate
+
+db-prepare:
+	php artisan migrate:fresh --seed
