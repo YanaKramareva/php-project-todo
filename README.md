@@ -1,5 +1,6 @@
 ### Tests and linter status:
-
+[![Maintainability](https://api.codeclimate.com/v1/badges/56aa9bf77cc5a3ad0c39/maintainability)](https://codeclimate.com/github/YanaKramareva/php-project-todo/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/56aa9bf77cc5a3ad0c39/test_coverage)](https://codeclimate.com/github/YanaKramareva/php-project-todo/test_coverage)
 ### TODO List:
 TODO List is a task management system.
 It allows you to create tasks, change their statuses and put labels.
