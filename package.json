@@ -9,7 +9,6 @@
         "prod": "npm run production",
         "production": "mix --production",
         "start": "node index.js",
-        "build": "ng build",
         "heroku-postbuild": "ng build --prod"
     },
     "devDependencies": {
