@@ -1,4 +1,5 @@
 ### Tests and linter status:
+[![Actions Status](https://github.com/YanaKramareva/php-project-todo/workflows/main/badge.svg)](https://github.com/YanaKramareva/php-project-todo/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/56aa9bf77cc5a3ad0c39/maintainability)](https://codeclimate.com/github/YanaKramareva/php-project-todo/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/56aa9bf77cc5a3ad0c39/test_coverage)](https://codeclimate.com/github/YanaKramareva/php-project-todo/test_coverage)
 ### TODO List:
