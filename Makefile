@@ -7,10 +7,10 @@ setup:
 	php artisan key:gen --ansi
 	touch database/database.sqlite
 	php artisan migrate
-	php artisan db:seed
+	php artisan migrate:fresh --seed
 	npm ci
 
-start-frontend:
+watch:
 	npm run watch
 
 migrate:
