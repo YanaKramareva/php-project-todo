@@ -8,8 +8,7 @@
         "hot": "mix watch --hot",
         "prod": "npm run production",
         "production": "mix --production",
-        "start": "node index.js",
-        "heroku-postbuild": "ng build --prod"
+        "start": "node index.js"
     },
     "devDependencies": {
         "@popperjs/core": "^2.10.2",
