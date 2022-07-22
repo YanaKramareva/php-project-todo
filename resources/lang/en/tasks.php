@@ -14,6 +14,8 @@ return [
     */
 
     'Tasks' => 'Tasks',
+    'Urgent tasks' => 'Urgent tasks',
+    'Not urgent tasks' => 'Not urgent tasks',
     'Create' => 'Create',
     'Create task' => 'Create task',
     'Edit' => 'Edit',

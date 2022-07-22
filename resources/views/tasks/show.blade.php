@@ -9,6 +9,6 @@
     <p class="text-break">{{  __('tasks.Name') . ": " . $task->name }}</p>
     <p class="text-break">{{ __('taskStatuses.Status') . ": " . $task->status->name }}</p>
     <p class="text-break">{{ __('tasks.Description') . ": " . $task->description }}</p>
-    <p class="text-break">{{ __('labels.Labels') . ": " . $task->$label->name }}</p>
+    <p class="text-break">{{ __('labels.Label') . ": " . $task->label->name }}</p>
 
 @endsection('content')

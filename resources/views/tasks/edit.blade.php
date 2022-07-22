@@ -16,7 +16,7 @@
         {{Form::bsSelect('status_id', $taskStatuses, null, ['placeholder' => '----------', 'class' => 'form-control' . ($errors->has('status_id') ? ' is-invalid' : '')])}}
     </div>
     <div class="form-group mb-3">
-        {{Form::label('label_id', __('labels.Labels'))}}
+        {{Form::label('label_id', __('labels.Label'))}}
         {{Form::bsSelect('label_id', $taskLabels, null, ['placeholder' => '----------', 'class' => 'form-control' . ($errors->has('label_id') ? ' is-invalid' : '')])}}
     </div>
     {{Form::submit(__('tasks.Update'), ['class' => 'btn btn-info mt-3'])}}
