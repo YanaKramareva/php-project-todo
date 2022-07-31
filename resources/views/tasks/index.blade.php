@@ -13,7 +13,7 @@
             <div class="row gx-5">
                 <div class="col-md-6">
                 <div class="p-3 border bg-light">
-                        <h2 class="mb-5">{{ __('tasks.Not urgent tasks')}}</h2>
+                        <h2 class="mb-5">{{ __('tasks.TODOS')}}</h2>
                         <table class="table me-2">
                             <thead>
                             <tr>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="p-3 border bg-light">
-                        <h2 class="mb-5">{{ __('tasks.Urgent tasks')}}</h2>
+                        <h2 class="mb-5">{{ __('tasks.Urgent TODOS')}}</h2>
                         <table class="table me-2">
                             <thead>
                             <tr>
