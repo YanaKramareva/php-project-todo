@@ -2,13 +2,6 @@
 
 @section('content')
     <div class="container">
-        <div class="ms-auto">
-            @if(Auth::check())
-                <a href="{{ route('tasks.create') }}" class="btn btn-info ml-auto">{{ __('tasks.Create task') }}</a>
-            @endif
-                <div class="d-flex mb-3">
-                </div>
-        </div>
         <div class="container px-6 text-center">
             <div class="row gx-5">
                 <div class="col-md-6">
@@ -51,9 +44,18 @@
                                         </tr>
                                     @endif
                                 @endforeach
+                                <h3 class="mb-5">{{count($tasks)}}</h3>
                             @endif
                         </table>
+                    <div class="ms-auto">
+                        @if(Auth::check())
+                            <a href="{{ route('tasks.create') }}" class="btn btn-info ml-auto">{{ __('tasks.Create task') }}</a>
+                        @endif
+                        <div class="d-flex mb-3">
+                        </div>
                     </div>
+
+                </div>
                 </div>
                 <div class="col-md-6">
                     <div class="p-3 border bg-light">
